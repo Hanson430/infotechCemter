@@ -1,29 +1,40 @@
-#Importing necesary libraries
-import sys # provides access to system-specific parameters and functions
-import time # Allows for time-related functions like delays 
+# Importing necessary libraries
+import sys  # provides access to system-specific parameters and functions
+import time  # Allows for time-related functions like delays 
 
+# ANSI escape sequences for color
+RED = "\033[31m"
+GREEN = "\033[32m"
+YELLOW = "\033[33m"
+CYAN = "\033[36m"
+RESET = "\033[0m"  # Resets color back to default
 
-print("\nWelcome Branch - Developer: Corbin Hanson")
+# Adding color to the initial welcome messages
+print(f"\n{CYAN}Welcome Branch - Developer: Corbin Hanson{RESET}")
 
-print("\nWelcome to InfoTech Center V1.0\n")
+print(f"\n{GREEN}Welcome to InfoTech Center V1.0{RESET}\n")
 
 x = 0
 ellipsis = 0
- 
-# loop to simulate a system booting animation
+
+# Loop to simulate a system booting animation
 while x != 20:
-    x += 1 # increment counter
+    x += 1  # increment counter
 
-    message = ("Infotech Center System Booting" + "." * ellipsis)  # Creates loading message with increasing dots
+    # Creates loading message with increasing dots
+    message = f"{YELLOW}Infotech Center System Booting{RESET}" + "." * ellipsis  
 
-    ellipsis += 1 # Increase ellipsis count
+    ellipsis += 1  # Increase ellipsis count
 
-    sys.stdout.write("\r" + message)  # Overwrites the current line in the terminal
+    # Overwrites the current line in the terminal
+    sys.stdout.write("\r" + message)
 
-    time.sleep(.5) # pause for half a secong to have a efffect
-# Reset ellipsis after reaching 3 dots to loop back
+    time.sleep(.5)  # pause for half a second to have an effect
+
+    # Reset ellipsis after reaching 3 dots to loop back
     if ellipsis == 4:
         ellipsis = 0
-# WHen the loop completes it has a final message
-    if x == 20:
-        print("\n\nOperating System Booted Up - Retina Scanned - Access Granted")
+
+# When the loop completes, it has a final message
+if x == 20:
+    print(f"\n\n{RED}Operating System Booted Up - Retina Scanned - Access Granted{RESET}")
