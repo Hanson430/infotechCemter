@@ -1,8 +1,7 @@
-#Libraries HERE
-import sys
-import time
+#Importing necesary libraries
+import sys # provides access to system-specific parameters and functions
+import time # Allows for time-related functions like delays 
 
-from google.protobuf.internal.test_bad_identifiers_pb2 import message
 
 print("\nWelcome Branch - Developer: Corbin Hanson")
 
@@ -10,20 +9,21 @@ print("\nWelcome to InfoTech Center V1.0\n")
 
 x = 0
 ellipsis = 0
-
+ 
+# loop to simulate a system booting animation
 while x != 20:
-    x += 1
+    x += 1 # increment counter
 
-    message = ("Infotech Center System Booting" + "." * ellipsis)
+    message = ("Infotech Center System Booting" + "." * ellipsis)  # Creates loading message with increasing dots
 
-    ellipsis += 1
+    ellipsis += 1 # Increase ellipsis count
 
-    sys.stdout.write("\r" + message)
+    sys.stdout.write("\r" + message)  # Overwrites the current line in the terminal
 
-    time.sleep(.5)
-
+    time.sleep(.5) # pause for half a secong to have a efffect
+# Reset ellipsis after reaching 3 dots to loop back
     if ellipsis == 4:
         ellipsis = 0
-
+# WHen the loop completes it has a final message
     if x == 20:
         print("\n\nOperating System Booted Up - Retina Scanned - Access Granted")
