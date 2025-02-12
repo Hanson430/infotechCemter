@@ -1,6 +1,7 @@
 # Importing necessary libraries
 import sys  # provides access to system-specific parameters and functions
 import time  # Allows for time-related functions like delays 
+import random  # Used for generating random weather conditions
 
 # ANSI escape sequences for color
 RED = "\033[31m"
@@ -38,12 +39,17 @@ while x != 20:
 # When the loop completes, it has a final message
 if x == 20:
     print(f"\n\n{RED}Operating System Booted Up - Retina Scanned - Access Granted{RESET}")
-import random  # Used for generating random weather conditions
+
+
+# Main execution
+print("\n*************************************\n")
+print("Weather Branch - Developer: Corbin Hanson")
 
 # Weather function to determine the weather
 def weather():
     weather_forecast_list = ["snowing", "blizzard", "icy", "raining", "windy", "sunny"]
     return random.choice(weather_forecast_list)
+
 
 # Vehicle response function
 def vehicle_response_system(weather_alert):
@@ -67,9 +73,7 @@ def vehicle_response_system(weather_alert):
         print(f"\nThe National Weather Service is calling for {weather_alert} skies outside.")
         print("VRS has been disengaged, drive safe!")
 
-# Main execution
-print("\n*************************************\n")
-print("Weather Branch - Developer: Corbin Hanson")
+
 
 weather_alert = weather()  # Generate a random weather condition
 vehicle_response_system(weather_alert)  # Pass the weather condition to the function
